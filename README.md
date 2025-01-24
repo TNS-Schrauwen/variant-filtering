@@ -9,7 +9,8 @@ VIA automates the process of variant identification, analyzing family data and r
   - phenotype file (optional)
 - System Pre-Requisites
   - [git](https://git-scm.com/downloads)
-  - [python](https://www.python.org/)
+  - [python3](https://www.python.org/downloads/)
+  - [pandas](https://anaconda.org/anaconda/pandas)
 
 Notes on cleaned data file:
 - Remove shifted rows from Annovar output (typically 1-10 in large file; check Otherinfo10; should all be .)
@@ -167,6 +168,24 @@ Each of these filters are used to pull out candidate variants:
 - filter_benign(df) - filters the DataFrame (df) to exclude variants that are "Benign" or "Likely benign". This filter is not used in any of the models.
 - filter_DP_Max(df, names, dp, inplace=1) - filters the DataFrame (df) for variants with a maximum DP across a list of affected people (names) that is greater than the minimum value (dp), a given constant. If inplace is 1, it filters df in place; if it is not, it filters into a new DataFrame
 - filter_chr(df, chrom, exclude = False) - filters the DataFrame (df) to keep only the rows in which the gene is located in a particular chromosome (chrom)
+
+## Easier use
+```bash
+mkdir -p /path/to/variant-filtering/bin
+nano /path/to/variant-filtering/bin/variant-filtering
+chmod +x /path/to/variant-filtering/bin/variant-filtering
+```
+
+```bash
+#!/bin/bash
+# Wrapper for running the variant-filtering tool
+
+REPO_DIR="/path/to/variant-filtering/variant-filtering"
+PYTHON_EXEC="python3"
+
+# Run the Python script with the arguments passed to this wrapper
+$PYTHON_EXEC $REPO_DIR/main.py "$@"
+```
 
 ## Change Log
 
