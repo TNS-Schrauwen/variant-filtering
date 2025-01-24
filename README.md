@@ -187,6 +187,9 @@ PYTHON_EXEC="python3"
 $PYTHON_EXEC $REPO_DIR/main.py "$@"
 ```
 
+Execute with:
+```variant-filtering```
+
 ## Change Log
 
 ### 0.1.x
