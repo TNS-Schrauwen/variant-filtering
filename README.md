@@ -51,7 +51,7 @@ An example would be a tab-delimited table like this:
 This file should be the exact output of the Mendelian_filtering_WORK.Rmd script. Within the defined output format of this script, the important columns used by VIA are:
 
 - *Chr* (Chromosome number)
-- *AF_popmax, PopFreqMax, GME_AF, Kaviar_AF, and abraom_freq* (population allele frequencies according to a variety of sources)
+- *AF_popmax, PopFreqMax, GME_AF, Kaviar_AF, and abraom_freq* (population allele frequencies according to a variety of sources) -> update to *AF, Kaviar_AF, REGENERON_ALL_AF, gnomad41_genome_AF_grpmax,  gnomad41_exome_AF_grpmax*
 - *CLNSIG* (clinical significance of the varient, i.e. benign vs pathogenic)
 - *< Individual ID >* (each individual has a column that contains the allelic depth, the zygosity, etc. for each gene)
 
