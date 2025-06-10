@@ -51,7 +51,7 @@ def filter_occurences(df, zyg, namestart, nameend, cap):
 
 # filter the dataFrame (df) by the maximum population allele frequency (cap)
 def filter_AF(df, cap):
-    AF_columns=["AF_popmax","GME_AF","Kaviar_AF","abraom_freq"]
+    AF_columns=["AF","Kaviar_AF","REGENERON_ALL_AF","gnomad41_genome_AF_grpmax","gnomad41_exome_AF_grpmax"]
     AF_columns = AF_columns + [col + ".1" for col in AF_columns]
 
     for col in AF_columns:
